@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/jianfeih/program/hadoop/tmp/dfs/name/current'
+let g:netrw_dirhist_2='/home/jianfeih/program/hadoop/logs/userlogs/job_201311131621_0003/attempt_201311131621_0003_m_000001_0'
+let g:netrw_dirhist_3='/home/jianfeih/program/hadoop/c++/Linux-amd64-64/include'
