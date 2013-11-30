@@ -5,7 +5,11 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+#
+# Jianfei Hu has its own robbyrussel theme file
+# should place modified version under .oh-my-zsh/themes folder
 ZSH_THEME="robbyrussell"
+
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -49,8 +53,6 @@ export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/
 
 #Below is Jianfei Hu's configuration
 unsetopt correct_all 
-export http_proxy='http://localhost:8087'
-export CLASSPATH=$CLASSPATH:/Users/bluesea/Documents/study/cs295/soot/soot-2.5.0.jar
 
 # command-line matlab
 alias matlab="/Applications/MATLAB_R2012b.app/bin/matlab -nodesktop"
