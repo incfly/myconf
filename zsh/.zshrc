@@ -8,6 +8,7 @@ ZSH=$HOME/.oh-my-zsh
 #
 # Jianfei Hu has its own robbyrussel theme file
 # should place modified version under .oh-my-zsh/themes folder
+# seems that author of this theme already considers that, so it's no longer needed
 ZSH_THEME="robbyrussell"
 
 
@@ -53,6 +54,10 @@ export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/
 
 #Below is Jianfei Hu's configuration
 unsetopt correct_all 
+
+#astyle configuration: used to format C/C++ source code
+alias astyle='astyle --indent=spaces=4'
+
 
 # command-line matlab
 alias matlab="/Applications/MATLAB_R2012b.app/bin/matlab -nodesktop"
