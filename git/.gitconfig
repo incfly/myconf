@@ -6,13 +6,17 @@
 	ci = commit -a
 	st = status
 	br = branch
-	oneline = log --pretty=oneline --since='2 days ago'
+	oneline = log --pretty=oneline #--since='2 days ago'
 	onelog = log -p -1
+	dfw = diff --ignore-all-space
 [color]
 	diff = auto
 	status = auto
 	branch = auto
 	ui = auto
 
-[core]
-	editor = vim
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[push]
+	default = matching
