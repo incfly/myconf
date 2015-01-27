@@ -9,11 +9,8 @@ set confirm
 " 自动缩进
 set autoindent
 set cindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-" 不要用空格代替制表符
-set noexpandtab
+set tabstop=4 shiftwidth=4 expandtab
+set softtabstop=4 
 " 在行和段开始处使用制表符
 set smarttab
 set number
