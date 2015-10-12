@@ -9,6 +9,8 @@
 	oneline = log --pretty=oneline #--since='2 days ago'
 	onelog = log -p -1
 	dfw = diff --ignore-all-space
+  sv = !git stash clear && git stash && git stash apply
+
 [color]
 	diff = auto
 	status = auto
