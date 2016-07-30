@@ -1,15 +1,21 @@
+" Jianfei
 sy on
 set nocompatible noeb
 set confirm nu
-set autoindent cindent softtabstop=4
+
+set autoindent cindent smartindent smarttab
+" tabstop: existing; expandtab: as indicates
+set tabstop=2 shiftwidth=2 expandtab
+set softtabstop=2 "width for explict tab.
+
 set history=1000
 set nobackup noswapfile
 
 set ignorecase hlsearch incsearch
 set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%y/%m/%d\ -\ %H:%M\")}
 
-set mouse=a paste
-set selection=exclusive selectmode=mouse,key
+"set mouse=a paste
+"set selection=exclusive selectmode=mouse,key
 
 set report=0
 set shortmess=atI
@@ -21,13 +27,13 @@ set scrolloff=3
 filetype on
 filetype plugin on
 filetype indent on
-
+"
 
 colorscheme molokai
 set t_Co=256
 let g:molokai_original = 1
 
-set foldmethod=syntax
+set foldmethod=syntax nofoldenable
 imap jj <Esc>
 
 "clang complete
@@ -38,3 +44,4 @@ set completeopt-=preview
 " CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
+
