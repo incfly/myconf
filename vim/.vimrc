@@ -45,3 +45,5 @@ set completeopt-=preview
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 
+" Tips
+" %s/old/new/gc # replace with confirmation
