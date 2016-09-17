@@ -1,3 +1,58 @@
+set nocompatible
+source /usr/share/vim/google/google.vim
+filetype plugin indent on
+syntax on
+
+source /usr/share/vim/google/glug/bootstrap.vim
+
+" plugin specific
+
+" Glug blaze plugin[mappings]='<leader>b'
+
+Glug codefmt
+Glug codefmt-google
+  augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  "autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType jslayout AutoFormatBuffer jslfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType python AutoFormatBuffer pyformat
+  autocmd FileType markdown AutoFormatBuffer mdformat
+  " gofmt always use tab, so set spaces to 2
+  au BufNewFile,BufRead *.go set nolist
+  au BufNewFile,BufRead *.go set softtabstop=2
+  au BufNewFile,BufRead *.go set shiftwidth=2
+  au BufNewFile,BufRead *.go set tabstop=2
+  au BufNewFile,BufRead *.go set noexpandtab
+ augroup END
+
+
+" Format selected
+vnoremap <F5> :FormatLines<CR>
+" Format whole file
+nnoremap <F6> :FormatCode<CR> 
+
+" outline-window
+Glug outline-window
+nnoremap ,g :GoogleOutlineWindow<CR>
+
+" You complete me
+Glug youcompleteme-google
+
+" piper
+Glug piper plugin[mappings]=',p'
+Glug grok
+
+source /usr/share/vim/google/gtags.vim
+
+" Go
+Glug codefmt gofmt_executable="goimports"
+Glug codefmt-google
+autocmd FileType go AutoFormatBuffer gofmt
+
 " Jianfei
 sy on
 set nocompatible noeb
@@ -45,5 +100,4 @@ set completeopt-=preview
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 
-" Tips
-" %s/old/new/gc # replace with confirmation
+
