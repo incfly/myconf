@@ -91,6 +91,9 @@ let g:molokai_original = 1
 set foldmethod=syntax nofoldenable
 imap jj <Esc>
 
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
 "clang complete
 let  g:clang_close_preview = 1
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -100,4 +103,7 @@ set completeopt-=preview
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 
-
+" Tips
+" %s/old/new/gc # replace with confirmation
+" <ctrl+r>" # copy yanked into prompt
+" :%s/<ctl-r><ctl-w>/foo/g # replace with cursor pointed text
