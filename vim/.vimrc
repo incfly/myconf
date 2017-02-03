@@ -8,7 +8,6 @@ source /usr/share/vim/google/glug/bootstrap.vim
 " plugin specific
 
 " Glug blaze plugin[mappings]='<leader>b'
-
 Glug codefmt
 Glug codefmt-google
   augroup autoformat_settings
@@ -46,6 +45,10 @@ Glug youcompleteme-google
 Glug piper plugin[mappings]=',p'
 Glug grok
 
+" refactorer
+Glug refactorer 
+noremap <F2> :GoogleRefactorerRename<CR>
+
 source /usr/share/vim/google/gtags.vim
 
 " Go
@@ -82,6 +85,10 @@ set scrolloff=3
 filetype on
 filetype plugin on
 filetype indent on
+
+" Plug https://github.com/junegunn/vim-plug
+call plug#begin('~/.vim/plugged')
+
 "
 
 colorscheme molokai
