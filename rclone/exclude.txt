@@ -1,0 +1,5 @@
+bin/**
+data/cache/**
+data/index/**
+data/lock/**
+data/tmp/**
