@@ -19,15 +19,8 @@ function myconf_setup(){
     cp zsh/.zshrc ~
 
     cp dircolors/.dir_colors ~/
-    echo "done!"
-}
 
-function setup_z_sh() {
-  echo "setup z.sh, modifying .zshrc..."
-  pushd misc_scripts/z/
-  echo "source $(pwd)/z.sh" >> ~/.zshrc
-  popd
-  # if not works, go to https://github.com/rupa/z.git
+    echo "done!"
 }
 
 # install necessary software

@@ -77,3 +77,4 @@ alias lma='alias | grep -e "alias g[0-9]"|grep -v "alias m"|sed "s/alias //"'
 touch ~/.bookmarks
 source ~/.bookmarks
 
+source ~/workspace/myconf/misc_scripts/z/z.sh
