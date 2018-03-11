@@ -87,7 +87,16 @@ filetype plugin on
 filetype indent on
 
 " Plug https://github.com/junegunn/vim-plug
+" Need to run :PlugInstall after vim reload.
 call plug#begin('~/.vim/plugged')
+
+" https://github.com/scrooloose/nerdcommenter
+Plug 'scrooloose/nerdcommenter'
+
+" Golang support
+Plug 'fatih/vim-go'
+
+call plug#end()
 
 "
 
