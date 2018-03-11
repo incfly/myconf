@@ -1,7 +1,6 @@
 set nocompatible
 source /usr/share/vim/google/google.vim
 filetype plugin indent on
-syntax on
 
 source /usr/share/vim/google/glug/bootstrap.vim
 
@@ -10,24 +9,15 @@ source /usr/share/vim/google/glug/bootstrap.vim
 " Glug blaze plugin[mappings]='<leader>b'
 Glug codefmt
 Glug codefmt-google
-  augroup autoformat_settings
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
   autocmd FileType bzl AutoFormatBuffer buildifier
   autocmd FileType go AutoFormatBuffer gofmt
-  autocmd FileType bzl AutoFormatBuffer buildifier
   "autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
   autocmd FileType java AutoFormatBuffer google-java-format
-  autocmd FileType jslayout AutoFormatBuffer jslfmt
-  autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType python AutoFormatBuffer pyformat
   autocmd FileType markdown AutoFormatBuffer mdformat
-  " gofmt always use tab, so set spaces to 2
-  au BufNewFile,BufRead *.go set nolist
-  au BufNewFile,BufRead *.go set softtabstop=2
-  au BufNewFile,BufRead *.go set shiftwidth=2
-  au BufNewFile,BufRead *.go set tabstop=2
-  au BufNewFile,BufRead *.go set noexpandtab
- augroup END
-
+augroup END
 
 " Format selected
 vnoremap <F5> :FormatLines<CR>
@@ -50,11 +40,6 @@ Glug refactorer
 noremap <F2> :GoogleRefactorerRename<CR>
 
 source /usr/share/vim/google/gtags.vim
-
-" Go
-Glug codefmt gofmt_executable="goimports"
-Glug codefmt-google
-autocmd FileType go AutoFormatBuffer gofmt
 
 " Jianfei
 sy on
@@ -86,17 +71,19 @@ filetype on
 filetype plugin on
 filetype indent on
 
+
 " Plug https://github.com/junegunn/vim-plug
-" Need to run :PlugInstall after vim reload.
 call plug#begin('~/.vim/plugged')
 
 " https://github.com/scrooloose/nerdcommenter
 Plug 'scrooloose/nerdcommenter'
-
 " Golang support
 Plug 'fatih/vim-go'
 
 call plug#end()
+
+nnoremap ,cc :call NERDComment(0,"toggle")<cr>
+vnoremap ,cc :call NERDComment(0,"toggle")<cr>
 
 "
 
@@ -118,6 +105,22 @@ set completeopt-=preview
 " CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
+
+" vim-go
+Plug 'fatih/vim-go'
+syntax on
+
+" gofmt always use tab, so set spaces to 2
+au BufNewFile,BufRead *.go set nolist
+au BufNewFile,BufRead *.go set softtabstop=2
+au BufNewFile,BufRead *.go set shiftwidth=2
+au BufNewFile,BufRead *.go set tabstop=2
+au BufNewFile,BufRead *.go set noexpandtab
+" Workaround for gofmt, re-render tabspace as after gofmt.
+au BufEnter,BufWritePost *.go set sw=2 ts=2 noet
+
+" Sync with current file location.
+map <leader>r :NERDTreeFind<cr>
 
 " Tips
 " %s/old/new/gc # replace with confirmation
