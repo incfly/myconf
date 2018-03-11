@@ -22,6 +22,14 @@ function myconf_setup(){
     echo "done!"
 }
 
+function setup_z_sh() {
+  echo "setup z.sh, modifying .zshrc..."
+  pushd misc_scripts/z/
+  echo "source $(pwd)/z.sh" >> ~/.zshrc
+  popd
+  # if not works, go to https://github.com/rupa/z.git
+}
+
 # install necessary software
 install
 myconf_setup
