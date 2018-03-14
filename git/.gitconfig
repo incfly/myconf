@@ -1,15 +1,16 @@
 [User]
 	name = Jianfei Hu 
-	email = hujianfei258@gmail.com
+	email = jianfeih@google.com
 [alias]
 	co = checkout
-	ci = commit -a
+  ci = commit -a --no-verify
 	st = status
 	br = branch
 	oneline = log --pretty=oneline #--since='2 days ago'
 	onelog = log -p -1
 	dfw = diff --ignore-all-space
   sv = !git stash clear && git stash && git stash apply
+  delbr = !git push -d origin $1 && git br -D $1  # alias to delete both local and remote branch.
 
 [color]
 	diff = auto
@@ -22,5 +23,11 @@
 	smudge = git-media-smudge %f
 [push]
 	default = matching
-[core]
-	editor = vim
+[diff]
+	tool = meld
+[http]
+	followRedirects = 1
+	followRedirects = 1
+	followRedirects = 1
+[credential]
+	helper = cache --timeout=36000000
