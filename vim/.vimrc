@@ -1,14 +1,16 @@
-set nocompatible
 source /usr/share/vim/google/google.vim
 filetype plugin indent on
-
 source /usr/share/vim/google/glug/bootstrap.vim
-
-" plugin specific
+source /usr/share/vim/google/gtags.vim
 
 " Glug blaze plugin[mappings]='<leader>b'
 Glug codefmt
 Glug codefmt-google
+" Format selected
+vnoremap <F5> :FormatLines<CR>
+" Format whole file
+nnoremap <F6> :FormatCode<CR> 
+
 augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
   autocmd FileType bzl AutoFormatBuffer buildifier
@@ -19,53 +21,26 @@ augroup autoformat_settings
   autocmd FileType markdown AutoFormatBuffer mdformat
 augroup END
 
-" Format selected
-vnoremap <F5> :FormatLines<CR>
-" Format whole file
-nnoremap <F6> :FormatCode<CR> 
-
-" outline-window
+" outline-window, for navigating.
 Glug outline-window
 nnoremap ,g :GoogleOutlineWindow<CR>
+Glug youcompleteme-google 
+Glug piper plugin[mappings]=',p' 
 
-" You complete me
-Glug youcompleteme-google
-
-" piper
-Glug piper plugin[mappings]=',p'
-Glug grok
-
-" refactorer
-Glug refactorer 
-noremap <F2> :GoogleRefactorerRename<CR>
-
-source /usr/share/vim/google/gtags.vim
 
 " Jianfei
 sy on
-set nocompatible noeb
-set confirm nu
-
-set autoindent cindent smartindent smarttab
+set nocompatible noeb confirm nu autoindent cindent smartindent smarttab
 " tabstop: existing; expandtab: as indicates
-set tabstop=2 shiftwidth=2 expandtab
-set softtabstop=2 "width for explict tab.
-
-set history=1000
+set tabstop=2 shiftwidth=2 expandtab softtabstop=2  history=1000
 set nobackup noswapfile
-
 set ignorecase hlsearch incsearch
 set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%y/%m/%d\ -\ %H:%M\")}
 
-"set mouse=a paste
-"set selection=exclusive selectmode=mouse,key
-
-set report=0
 set shortmess=atI
 set fillchars=vert:\ ,stl:\ ,stlnc:\
 set showmatch
-set matchtime=5
-set scrolloff=3
+set report=0 matchtime=5 scrolloff=3
 
 filetype on
 filetype plugin on
@@ -75,24 +50,22 @@ filetype indent on
 " Plug https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
-" https://github.com/scrooloose/nerdcommenter
-Plug 'scrooloose/nerdcommenter'
-" Golang support
-Plug 'fatih/vim-go'
+  " https://github.com/scrooloose/nerdcommenter
+  Plug 'scrooloose/nerdcommenter'
+  " Golang support
+  Plug 'fatih/vim-go'
 
 call plug#end()
 
 nnoremap ,cc :call NERDComment(0,"toggle")<cr>
 vnoremap ,cc :call NERDComment(0,"toggle")<cr>
 
-"
 
 colorscheme molokai
 set t_Co=256
 let g:molokai_original = 1
 
 set foldmethod=syntax nofoldenable
-imap jj <Esc>
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
@@ -107,7 +80,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 
 " vim-go
-Plug 'fatih/vim-go'
+let g:go_fmt_command = "goimports"
 syntax on
 
 " gofmt always use tab, so set spaces to 2
@@ -126,3 +99,4 @@ map <leader>r :NERDTreeFind<cr>
 " %s/old/new/gc # replace with confirmation
 " <ctrl+r>" # copy yanked into prompt
 " :%s/<ctl-r><ctl-w>/foo/g # replace with cursor pointed text
+
