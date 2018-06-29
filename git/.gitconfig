@@ -5,7 +5,8 @@
 	co = checkout
   ci = commit -a --no-verify
 	st = status
-	br = branch
+  br = branch
+  clean = clean -f -d # deleteuntracked files in workspace.
 	oneline = log --pretty=oneline #--since='2 days ago'
 	onelog = log -p -1
 	dfw = diff --ignore-all-space
@@ -24,10 +25,15 @@
 [push]
 	default = matching
 [diff]
-	tool = meld
+	tool = vimdiff
+[difftool]
+      prompt = false
 [http]
 	followRedirects = 1
 	followRedirects = 1
 	followRedirects = 1
+	followRedirects = 1
 [credential]
-	helper = cache --timeout=36000000
+  helper = cache --timeout=36000000
+[pager]
+	branch = false
