@@ -78,3 +78,6 @@ touch ~/.bookmarks
 source ~/.bookmarks
 
 source ~/workspace/myconf/misc_scripts/z/z.sh
+
+# PROMPT includes the hostname.
+export PROMPT='%{$fg_bold[black]%}%M %{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
