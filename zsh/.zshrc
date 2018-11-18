@@ -56,7 +56,7 @@ export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/
 unsetopt correct_all 
 
 # set ls colors
-eval `dircolors .dir_colors`
+eval `dircolors $HOME/.dir_colors`
 
 #export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[1;$((31+3*!$?))m\]\$\[\033[00m\] '
 #export PS1='%${fg_bold[\033[1;$((31+3*!$?))m\]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'

@@ -4,6 +4,7 @@ function install(){
     sudo apt-get install tmux git vim zsh golang-go build-essential -y
 }
 
+# TODO: detect whether golang hasbeen installed.
 function golang_setup() {
   mkdir -p ~/workspace/go/
   mkdir tmp/
@@ -16,8 +17,6 @@ function golang_setup() {
 }
 
 function myconf_setup(){
-    sudo apt-get update
-    sudo apt-get -y upgrade
     # install oh-my-zsh
     echo "installing oh-my-zsh..."
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
