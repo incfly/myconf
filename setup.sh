@@ -20,6 +20,11 @@ function myconf_setup(){
 
     cp dircolors/.dir_colors ~/
 
+    # https://github.com/junegunn/fzf#installation
+    echo "=======================\nInstall Bash Fuzzy Finder...=======================\n"
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+
     echo "done!"
 }
 
