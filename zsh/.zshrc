@@ -77,6 +77,9 @@ alias lma='alias | grep -e "alias g[0-9]"|grep -v "alias m"|sed "s/alias //"'
 touch ~/.bookmarks
 source ~/.bookmarks
 
+# https://github.com/ahmetb/kubectl-aliases/blob/master/.kubectl_aliases
+source ~/.kubectl_aliases
+
 source ~/workspace/myconf/misc_scripts/z/z.sh
 
 # PROMPT includes the hostname.

@@ -22,6 +22,7 @@ function kubectl_setup() {
   echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
   sudo apt-get update
   sudo apt-get install -y kubectl
+  wget https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases -L ~/.kubectl_aliases
 }
 
 function myconf_setup(){
