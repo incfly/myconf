@@ -58,31 +58,8 @@ unsetopt correct_all
 # set ls colors
 eval `dircolors $HOME/.dir_colors`
 
-#export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[1;$((31+3*!$?))m\]\$\[\033[00m\] '
-#export PS1='%${fg_bold[\033[1;$((31+3*!$?))m\]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-
-
-# Bash Directory Bookmarks
-alias m1='alias g1="cd `pwd`"'
-alias m2='alias g2="cd `pwd`"'
-alias m3='alias g3="cd `pwd`"'
-alias m4='alias g4="cd `pwd`"'
-alias m5='alias g5="cd `pwd`"'
-alias m6='alias g6="cd `pwd`"'
-alias m7='alias g7="cd `pwd`"'
-alias m8='alias g8="cd `pwd`"'
-alias m9='alias g9="cd `pwd`"'
-alias mdump='alias|grep -e "alias g[0-9]"|grep -v "alias m" > ~/.bookmarks'
-alias lma='alias | grep -e "alias g[0-9]"|grep -v "alias m"|sed "s/alias //"'
-touch ~/.bookmarks
-source ~/.bookmarks
 
 # https://github.com/ahmetb/kubectl-aliases/blob/master/.kubectl_aliases
-source ~/.kubectl_aliases
-
-source ~/workspace/myconf/misc_scripts/z/z.sh
-
-# PROMPT includes the hostname.
-export PROMPT='%{$fg_bold[black]%}%M %{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-
+source $HOME/.kubectl_aliases
+source $HOME/workspace/myconf/misc_scripts/z/z.sh
 source $HOME/workspace/myconf/golang/config.sh
