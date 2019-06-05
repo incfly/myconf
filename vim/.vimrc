@@ -1,11 +1,7 @@
-source /usr/share/vim/google/google.vim
+filetype on
+filetype plugin on
+filetype indent on
 filetype plugin indent on
-source /usr/share/vim/google/glug/bootstrap.vim
-source /usr/share/vim/google/gtags.vim
-
-" Glug blaze plugin[mappings]='<leader>b'
-Glug codefmt
-Glug codefmt-google
 " Format selected
 vnoremap <F5> :FormatLines<CR>
 " Format whole file
@@ -21,35 +17,20 @@ augroup autoformat_settings
   autocmd FileType markdown AutoFormatBuffer mdformat
 augroup END
 
-" outline-window, for navigating.
-Glug outline-window
-nnoremap ,g :GoogleOutlineWindow<CR>
-Glug youcompleteme-google 
-Glug piper plugin[mappings]=',p' 
-
-
-" Jianfei
 sy on
 set nocompatible noeb confirm nu autoindent cindent smartindent smarttab
-" tabstop: existing; expandtab: as indicates
 set tabstop=2 shiftwidth=2 expandtab softtabstop=2  history=1000
 set nobackup noswapfile
 set ignorecase hlsearch incsearch
 set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%y/%m/%d\ -\ %H:%M\")}
-
 set shortmess=atI
 set fillchars=vert:\ ,stl:\ ,stlnc:\
 set showmatch
 set report=0 matchtime=5 scrolloff=3
 
-filetype on
-filetype plugin on
-filetype indent on
-
 
 " Plug https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
-
   " https://github.com/scrooloose/nerdcommenter
   Plug 'scrooloose/nerdcommenter'
   " Golang support
@@ -91,12 +72,5 @@ au BufNewFile,BufRead *.go set tabstop=2
 au BufNewFile,BufRead *.go set noexpandtab
 " Workaround for gofmt, re-render tabspace as after gofmt.
 au BufEnter,BufWritePost *.go set sw=2 ts=2 noet
-
 " Sync with current file location.
 map <leader>r :NERDTreeFind<cr>
-
-" Tips
-" %s/old/new/gc # replace with confirmation
-" <ctrl+r>" # copy yanked into prompt
-" :%s/<ctl-r><ctl-w>/foo/g # replace with cursor pointed text
-

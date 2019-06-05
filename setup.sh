@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function install(){
-    sudo apt-get install tmux git vim zsh golang-go build-essential -y
+    sudo apt-get install tmux git vim zsh golang-go build-essential ack-grep -y
 }
 
 # TODO: detect whether golang hasbeen installed.
@@ -50,6 +50,6 @@ function myconf_setup(){
 }
 
 # install necessary software
-install
-myconf_setup
-golang_setup
+# install
+#myconf_setup
+# golang_setup
