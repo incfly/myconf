@@ -50,7 +50,7 @@ plugins=(git golang)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Users/bluesea/program/sbt/bin
+export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Users/bluesea/program/sbt/bin:$HOME/bin
 
 #Below is Jianfei Hu's configuration
 unsetopt correct_all 
@@ -60,6 +60,7 @@ eval `dircolors $HOME/.dir_colors`
 
 
 # https://github.com/ahmetb/kubectl-aliases/blob/master/.kubectl_aliases
-source $HOME/.kubectl_aliases
+# source $HOME/.kubectl_aliases
 source $HOME/workspace/myconf/misc_scripts/z/z.sh
 source $HOME/workspace/myconf/golang/config.sh
+alias python=python3

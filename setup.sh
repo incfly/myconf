@@ -25,6 +25,30 @@ function kubectl_setup() {
   wget https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases -L ~/.kubectl_aliases
 }
 
+vimsetup() {
+  # https://github.com/VundleVim/Vundle.vim#about
+  sudo apt install build-essential cmake python3-dev -y
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+}
+
+cppsetup() {
+  sudo apt-get install pkg-config zip g++ zlib1g-dev unzip python -y
+  # from envoy
+	sudo apt-get install \
+		 libtool \
+		 cmake \
+		 # clang-format-8 \ not  working yet...
+		 automake \
+		 autoconf \
+		 make \
+		 ninja-build \
+		 curl \
+		 unzip \
+		 virtualenv -y
+  mkdir ~/tmp
+  wget https://github.com/bazelbuild/bazel/releases/download/0.26.0/bazel-0.26.0-installer-linux-x86_64.sh \
+    -P ~/tmp
+}
 function myconf_setup(){
     # install oh-my-zsh
     echo "installing oh-my-zsh..."
