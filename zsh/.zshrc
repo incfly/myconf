@@ -64,3 +64,4 @@ eval `dircolors $HOME/.dir_colors`
 source $HOME/workspace/myconf/misc_scripts/z/z.sh
 source $HOME/workspace/myconf/golang/config.sh
 alias python=python3
+alias watch='watch '
