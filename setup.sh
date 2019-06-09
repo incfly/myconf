@@ -74,6 +74,6 @@ function myconf_setup(){
 }
 
 # install necessary software
-# install
-#myconf_setup
+#install
+myconf_setup
 # golang_setup
