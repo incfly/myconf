@@ -1,7 +1,8 @@
 #!/bin/bash
 
 function install(){
-    sudo apt-get install tmux git vim zsh golang-go build-essential ack-grep -y
+    sudo apt-get install tmux git vim zsh golang-go \
+      build-essential ack-grep hugo -y
 }
 
 # TODO: detect whether golang hasbeen installed.
@@ -49,6 +50,7 @@ cppsetup() {
   wget https://github.com/bazelbuild/bazel/releases/download/0.26.0/bazel-0.26.0-installer-linux-x86_64.sh \
     -P ~/tmp
 }
+
 function myconf_setup(){
     # install oh-my-zsh
     echo "installing oh-my-zsh..."
@@ -75,5 +77,5 @@ function myconf_setup(){
 
 # install necessary software
 #install
-myconf_setup
+#myconf_setup
 # golang_setup
