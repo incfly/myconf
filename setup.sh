@@ -46,9 +46,9 @@ cppsetup() {
 		 curl \
 		 unzip \
 		 virtualenv -y
-  mkdir ~/tmp
+  mkdir $HOME/workspace/tmp
   wget https://github.com/bazelbuild/bazel/releases/download/0.26.0/bazel-0.26.0-installer-linux-x86_64.sh \
-    -P ~/tmp
+    -P $HOME/workspace/tmp
 }
 
 function myconf_setup(){
