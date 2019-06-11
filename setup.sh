@@ -8,13 +8,11 @@ function install(){
 # TODO: detect whether golang hasbeen installed.
 function golang_setup() {
   mkdir -p ~/workspace/go/
-  mkdir tmp/
-  pushd tmp
-  wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz
-  sudo tar -xvf go1.10.linux-amd64.tar.gz
+  pushd $HOME/workspace/tmp
+  wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz  -o go.tar.gz
+  sudo tar -xvf go.tar.gz
   sudo mv go /usr/local
   popd
-  rm -rf tmp
 }
 
 function kubectl_setup() {
