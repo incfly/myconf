@@ -45,7 +45,6 @@ cppsetup() {
 	sudo apt-get install \
 		 libtool \
 		 cmake \
-		 # clang-format-8 \ not  working yet...
 		 automake \
 		 autoconf \
 		 make \
@@ -56,6 +55,12 @@ cppsetup() {
   mkdir $HOME/workspace/tmp
   wget https://github.com/bazelbuild/bazel/releases/download/0.26.0/bazel-0.26.0-installer-linux-x86_64.sh \
     -P $HOME/workspace/tmp
+}
+
+envoysetup() {
+  wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key |sudo apt-key add -
+  sudo apt-add-repository "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-8 main"
+  sudo apt-get update && sudo apt-get install clang-format-8
 }
 
 function myconf_setup(){
