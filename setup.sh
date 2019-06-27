@@ -57,11 +57,6 @@ cppsetup() {
     -P $HOME/workspace/tmp
 }
 
-envoysetup() {
-  wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key |sudo apt-key add -
-  sudo apt-add-repository "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-8 main"
-  sudo apt-get update && sudo apt-get install clang-format-8
-}
 
 function myconf_setup(){
     # install oh-my-zsh
