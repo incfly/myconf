@@ -24,21 +24,6 @@ function kubectl_setup() {
   wget https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases -L ~/.kubectl_aliases
 }
 
-vimsetup() {
-  # https://github.com/VundleVim/Vundle.vim#about
-  sudo apt install build-essential cmake python3-dev -y
-  # ln -s vim/.vim ~
-  # ln -s vim/.vimrc ~
-  cp vim/.vimrc ~/
-  cp -r vim/.vim ~/
-  # Invoking the PluginInstall in Vim
-  vim -E -c PluginInstall -c q
-  # Run
-  cd /home/jianfeih/.vim/bundle/YouCompleteMe/
-  python3 install.py --clang-completer
-  # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-}
-
 cppsetup() {
   sudo apt-get install pkg-config zip g++ zlib1g-dev unzip python -y
   # from envoy
@@ -57,6 +42,11 @@ cppsetup() {
     -P $HOME/workspace/tmp
 }
 
+envoysetup() {
+  wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key |sudo apt-key add -
+  sudo apt-add-repository "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-8 main"
+  sudo apt-get update && sudo apt-get install clang-format-8
+}
 
 function myconf_setup(){
     # install oh-my-zsh

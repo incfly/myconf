@@ -9,8 +9,7 @@ set ignorecase hlsearch incsearch
 set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%y/%m/%d\ -\ %H:%M\")}
 set shortmess=atI
 set fillchars=vert:\ ,stl:\ ,stlnc:\
-set showmatch
-set report=0 matchtime=5 scrolloff=3
+set showmatch report=0 matchtime=5 scrolloff=3
 
 
 " Plug https://github.com/junegunn/vim-plug
@@ -21,6 +20,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'fatih/vim-go'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+  " https://github.com/terryma/vim-multiple-cursors, visual, ctrl-n
+  Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 nnoremap ,cc :call NERDComment(0,"toggle")<cr>
