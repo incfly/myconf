@@ -1,13 +1,13 @@
 #!/bin/bash
 
 function install(){
+    mkdir -p $HOME/workspace/tmp -p $HOME/workspace/bin $HOME/workspace/go/
     sudo apt-get install tmux git vim zsh golang-go \
       build-essential ack-grep hugo -y
 }
 
 # TODO: detect whether golang hasbeen installed.
 function golang_setup() {
-  mkdir -p ~/workspace/go/
   pushd $HOME/workspace/tmp
   wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz  -o go.tar.gz
   sudo tar -xvf go.tar.gz
