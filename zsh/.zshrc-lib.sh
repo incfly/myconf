@@ -56,7 +56,7 @@ export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/
 unsetopt correct_all 
 
 # set ls colors
-eval `dircolors $HOME/.dir_colors`
+eval `dircolors $HOME/workspace/myconf/misc_scripts/.dir_colors`
 
 # https://github.com/ahmetb/kubectl-aliases/blob/master/.kubectl_aliases
 source $HOME/workspace/myconf/misc_scripts/.kubectl_aliases
