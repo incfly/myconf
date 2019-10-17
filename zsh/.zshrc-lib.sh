@@ -59,7 +59,7 @@ unsetopt correct_all
 eval `dircolors $HOME/.dir_colors`
 
 # https://github.com/ahmetb/kubectl-aliases/blob/master/.kubectl_aliases
-# source $HOME/.kubectl_aliases
+source $HOME/workspace/myconf/misc_scripts/.kubectl_aliases
 source $HOME/workspace/myconf/misc_scripts/z/z.sh
 source $HOME/workspace/myconf/golang/config.sh
 alias python=python3
