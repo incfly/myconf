@@ -50,12 +50,10 @@ plugins=(git golang)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Users/bluesea/program/sbt/bin:$HOME/bin
-
-#Below is Jianfei Hu's configuration
+export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:$HOME/bin
+export PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
 unsetopt correct_all 
 
-# set ls colors
 eval `dircolors $HOME/workspace/myconf/misc_scripts/.dir_colors`
 
 # https://github.com/ahmetb/kubectl-aliases/blob/master/.kubectl_aliases
