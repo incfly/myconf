@@ -3,8 +3,13 @@ function sshgce() {
   ssh  -o ProxyCommand="corp-ssh-helper %h %p" -i ~/.ssh/google_compute_engine $@
 }
 
-function todogooglenothelpfulcmds() {
+# sshgcepf port ip
+function sshgcepf() {
+  port=$1
+  sshgce -L "${port}:localhost:${port}" $2
+}
 
+function todogooglenothelpfulcmds() {
 alias gd='cd /google/src/cloud/jianfeih/hjf/google3'
 alias tmux='tmux -2'
 alias blaze='blaze --blazerc=/usr/local/google/home/jianfeih/.blazerc'
@@ -38,17 +43,11 @@ source '/usr/local/google/home/jianfeih/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
 source '/usr/local/google/home/jianfeih/google-cloud-sdk/completion.zsh.inc'
-
-alias watch='watch '
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export P4DIFF='colordiff -u'
-
 export GOPATH="/usr/local/google/home/jianfeih/workspace/golang"
 export GO111MODULE=on
 export PATH=$PATH:$(go env GOPATH)/bin:$HOME/.bazel/bin
-
-alias kc="kubectl"
 source ~/workspace/bitbucket/myconf/misc_scripts/z/z.sh
 }

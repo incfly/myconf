@@ -54,10 +54,10 @@ export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/
 export PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
 unsetopt correct_all 
 
-eval `dircolors $HOME/workspace/myconf/misc_scripts/.dir_colors`
+eval `dircolors $HOME/workspace/myconf/zsh/.dir_colors`
 
 # https://github.com/ahmetb/kubectl-aliases/blob/master/.kubectl_aliases
-source $HOME/workspace/myconf/misc_scripts/.kubectl_aliases
+source $HOME/workspace/myconf/zsh/.kubectl_aliases
 source $HOME/workspace/myconf/misc_scripts/z/z.sh
 source $HOME/workspace/myconf/golang/config.sh
 alias python=python3
