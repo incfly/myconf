@@ -51,7 +51,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:$HOME/bin
-export PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
+# TODO: enable this cause cursor move problem, random place...
+# export PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
 unsetopt correct_all 
 
 eval `dircolors $HOME/workspace/myconf/zsh/.dir_colors`
