@@ -47,6 +47,10 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git golang)
 
+# Causing many copy paste url problems...
+# https://github.com/robbyrussell/oh-my-zsh/issues/5569
+export DISABLE_MAGIC_FUNCTIONS=true
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
