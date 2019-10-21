@@ -4,7 +4,7 @@
 [alias]
 	co = checkout
   ci = commit -a --no-verify
-  cmp = "!gitcmp() { git ci -m \"$@\" && git push; }; gitcmp"
+  cmp = "!gitcmp() { git ci -m \"$@\" && git push origin HEAD; }; gitcmp"
 	st = status
   br = branch
   clean = clean -f -d # deleteuntracked files in workspace.
