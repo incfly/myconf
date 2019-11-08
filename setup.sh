@@ -56,17 +56,13 @@ function myconf_setup(){
     echo "copy settings(vim, tmux, zsh, dircolors)..."
     cp vim/.vimrc ~/
     cp -r vim/.vim ~/
-
     cp tmux/.tmux.conf ~/
-
-    cp git/.gitconfig ~/
-
+    ln -s git/.gitconfig $HOME/.gitconfig
     cp zsh/.zshrc ~
     # https://github.com/junegunn/fzf#installation
     echo "=======================\nInstall Bash Fuzzy Finder...=======================\n"
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     ~/.fzf/install
-
     echo "done!"
 }
 

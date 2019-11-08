@@ -4,6 +4,7 @@
 [alias]
 	co = checkout
   ci = commit -a --no-verify
+  cmp = "!gitcmp() { git ci -m \"$@\" && git push origin HEAD; }; gitcmp"
 	st = status
   br = branch
   clean = clean -f -d # deleteuntracked files in workspace.
@@ -37,3 +38,6 @@
   helper = cache --timeout=36000000
 [pager]
 	branch = false
+[core]
+  editor = vim
+

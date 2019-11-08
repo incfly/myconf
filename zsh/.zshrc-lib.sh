@@ -47,11 +47,16 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git golang)
 
+# Causing many copy paste url problems...
+# https://github.com/robbyrussell/oh-my-zsh/issues/5569
+export DISABLE_MAGIC_FUNCTIONS=true
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:$HOME/bin
-export PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
+# TODO: enable this cause cursor move problem, random place...
+# export PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
 unsetopt correct_all 
 
 eval `dircolors $HOME/workspace/myconf/zsh/.dir_colors`
@@ -63,4 +68,5 @@ source $HOME/workspace/myconf/golang/config.sh
 alias python=python3
 alias watch='watch '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source ~/workspace/myconf/zsh/google.sh
+source $HOME/workspace/myconf/zsh/google.sh
+source $HOME/workspace/myconf/zsh/kubectl-istio-lib.sh
