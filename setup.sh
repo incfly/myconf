@@ -57,7 +57,7 @@ function myconf_setup(){
     cp vim/.vimrc ~/
     cp -r vim/.vim ~/
     cp tmux/.tmux.conf ~/
-    ln -s git/.gitconfig $HOME/.gitconfig
+    ln -s $(pwd)/git/.gitconfig $HOME/.gitconfig
     cp zsh/.zshrc ~
     # https://github.com/junegunn/fzf#installation
     echo "=======================\nInstall Bash Fuzzy Finder...=======================\n"

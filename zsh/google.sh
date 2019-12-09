@@ -3,10 +3,9 @@ function sshgce() {
   ssh  -o ProxyCommand="corp-ssh-helper %h %p" -i ~/.ssh/google_compute_engine $@
 }
 
-# sshgcepf port ip
+# sshgcepf ip port
 function sshgcepf() {
-  port=$1
-  sshgce -L "${port}:localhost:${port}" $2
+  sshgce $1 -L "${2}:localhost:${2}"
 }
 
 function todogooglenothelpfulcmds() {
