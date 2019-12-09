@@ -70,3 +70,4 @@ alias watch='watch '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $HOME/workspace/myconf/zsh/google.sh
 source $HOME/workspace/myconf/zsh/kubectl-istio-lib.sh
+source $HOME/workspace/myconf/zsh/istio.sh
