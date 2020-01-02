@@ -49,6 +49,10 @@ envoysetup() {
   sudo apt-get update && sudo apt-get install clang-format-8
 }
 
+rustsetup() {
+  bash rust/setup.sh
+}
+
 function myconf_setup(){
     # install oh-my-zsh
     echo "installing oh-my-zsh..."

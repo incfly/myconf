@@ -71,3 +71,6 @@ alias watch='watch '
 source $HOME/workspace/myconf/zsh/google.sh
 source $HOME/workspace/myconf/zsh/kubectl-istio-lib.sh
 source $HOME/workspace/myconf/zsh/istio.sh
+
+# Add Rust to PATH
+[ -f ~/.cargo/env ] && source ~/.cargo/env
