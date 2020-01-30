@@ -68,9 +68,8 @@ source $HOME/workspace/myconf/golang/config.sh
 alias python=python3
 alias watch='watch '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source $HOME/workspace/myconf/zsh/google.sh
-source $HOME/workspace/myconf/zsh/kubectl-istio-lib.sh
-source $HOME/workspace/myconf/zsh/istio.sh
+
+source $HOME/workspace/myconf/zsh/*.sh
 
 # Add Rust to PATH
 [ -f ~/.cargo/env ] && source ~/.cargo/env
