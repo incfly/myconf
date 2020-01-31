@@ -69,7 +69,9 @@ alias python=python3
 alias watch='watch '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source $HOME/workspace/myconf/zsh/*.sh
+for i in $HOME/workspace/myconf/zsh/*.sh; do
+  source $i
+done
 
 # Add Rust to PATH
 [ -f ~/.cargo/env ] && source ~/.cargo/env
