@@ -49,6 +49,10 @@ envoysetup() {
   sudo apt-get update && sudo apt-get install clang-format-8
 }
 
+rustsetup() {
+  bash rust/setup.sh
+}
+
 function myconf_setup(){
     # install oh-my-zsh
     echo "installing oh-my-zsh..."
@@ -58,7 +62,7 @@ function myconf_setup(){
     mkdir -p $HOME/.ssh/ && cp ssh/config ~/.ssh/
     cp -r vim/.vim ~/
     cp tmux/.tmux.conf ~/
-    ln -s git/.gitconfig $HOME/.gitconfig
+    ln -s $(pwd)/git/.gitconfig $HOME/.gitconfig
     cp zsh/.zshrc ~
     # https://github.com/junegunn/fzf#installation
     echo "=======================\nInstall Bash Fuzzy Finder...=======================\n"
