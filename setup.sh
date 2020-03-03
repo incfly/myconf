@@ -59,7 +59,7 @@ function myconf_setup(){
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     echo "copy settings(vim, tmux, zsh, dircolors, ssh)..."
     cp vim/.vimrc ~/
-    mkdir -p $HOME/.ssh/ && cp ssh/config ~/.ssh/
+    mkdir -p $HOME/.ssh/ && cat ssh/config >> ~/.ssh/config
     cp -r vim/.vim ~/
     cp tmux/.tmux.conf ~/
     ln -s $(pwd)/git/.gitconfig $HOME/.gitconfig
