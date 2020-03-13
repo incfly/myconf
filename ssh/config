@@ -1,0 +1,8 @@
+Host incfly-dev
+    HostName 35.226.253.86
+    IdentityFile ~/.ssh/google_compute_engine
+    ProxyCommand corp-ssh-helper %h %p
+
+Host cloudtop
+    HostName jianfeih.c.googlers.com
+
