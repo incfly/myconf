@@ -65,8 +65,6 @@ eval `dircolors $HOME/workspace/myconf/zsh/.dir_colors`
 source $HOME/workspace/myconf/zsh/.kubectl_aliases
 source $HOME/workspace/myconf/misc_scripts/z/z.sh
 source $HOME/workspace/myconf/golang/config.sh
-alias python=python3
-alias watch='watch '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 for i in $HOME/workspace/myconf/zsh/*.sh; do
@@ -75,3 +73,9 @@ done
 
 # Add Rust to PATH
 [ -f ~/.cargo/env ] && source ~/.cargo/env
+
+
+alias python=python3
+alias watch='watch '
+alias wt='watch '
+alias ta='tmux attach'
