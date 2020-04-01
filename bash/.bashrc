@@ -1,1 +1,1 @@
-source /usr/local/google/home/jianfeih/workspace/myconf/bash/bashrc-lib.sh
+source $HOME/workspace/myconf/bash/bashrc-lib.sh
