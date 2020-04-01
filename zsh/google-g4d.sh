@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-source /etc/bash_completion.d/g4d
+[[ -f /etc/bash_completion.d/g4d ]] && source /etc/bash_completion.d/g4d
