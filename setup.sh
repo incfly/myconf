@@ -3,7 +3,7 @@
 function install(){
     mkdir -p $HOME/workspace/tmp -p $HOME/workspace/bin $HOME/workspace/go/
     sudo apt-get install tmux git vim zsh golang-go \
-      build-essential ack-grep hugo -y
+      build-essential ack-grep hugo tree -y
 }
 
 function golang_setup() {
