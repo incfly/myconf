@@ -35,6 +35,7 @@
 # ki pc <pod> listener|cluster --name='outbound.*9090',
 #   name pattern using jq for extraction
 # ki cluster abc
+# TODO: cmd snippet of tcpdump.
 import os
 import argparse
 import subprocess
