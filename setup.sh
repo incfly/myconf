@@ -6,10 +6,9 @@ function install(){
       build-essential ack-grep hugo tree -y
 }
 
-# TODO: detect whether golang hasbeen installed.
 function golang_setup() {
   pushd $HOME/workspace/tmp
-  wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz  -o go.tar.gz
+  wget https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz  -O go.tar.gz
   sudo tar -xvf go.tar.gz
   sudo mv go /usr/local
   popd
