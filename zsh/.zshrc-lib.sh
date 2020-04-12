@@ -79,3 +79,4 @@ alias python=python3
 alias watch='watch '
 alias wt='watch '
 alias ta='tmux attach'
+alias ki="${HOME}/workspace/myconf/bin/ki.py"
