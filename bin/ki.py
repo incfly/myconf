@@ -54,6 +54,9 @@ def shell_wrapper(cli, dry_run=False):
 
 def istio_handler(args, version):
   print('Istio handler')
+  if args.delete:
+    shell_wrapper(f'zsh {BIN_DIR}/istio-uninstall.sh')
+    return
   shell_wrapper('''bash -x {root}/istio.sh {version}'''
     .format(root=BIN_DIR, version=version))
 
@@ -75,8 +78,8 @@ def cluster_handler(args, cluster):
   shell_wrapper('''bash -x {BIN_DIR}/cluster.sh {cluster}''')
 
 def envoy_dump(args, pod):
-  print("Getting Envoy Config Dump")
-  shell_wrapper(f'bash -x {BIN_DIR}/pc.sh {pod}')
+  print(f'Getting Envoy Config Dump, pod = {pod}, output file {args.output}')
+  shell_wrapper(f'bash -x {BIN_DIR}/pc.sh {pod} {args.output}')
 
 
 def envoy_log(args, target):
@@ -110,17 +113,19 @@ def run(args):
   handler = FUNCTION_MAP[args.command]
   res = args.resource
   # positional arg does not make sense and not supported by argparse.
-  # if not res:
-  #   res = DEFAULT_RESOURCE[args.command]
+  if not res or res == 'default':
+    res = DEFAULT_RESOURCE[args.command]
   handler(args, res)
 
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='Tools for Kuberntes and Istio.')
   parser.add_argument('command', choices=FUNCTION_MAP.keys(), help='bar help')
-  parser.add_argument('-del', dest='delete', default=False, action='store_true', help='uninstall/delete/etc')
-  parser.add_argument('resource', default='', help='the resource')
+  parser.add_argument('-rm', dest='delete', default=False, action='store_true', help='uninstall/delete/etc')
+  parser.add_argument('resource', nargs='?', help='the resource')
   parser.add_argument('-n', dest='namespace', default='default', help='kube namespace to operate on')
+  # TODO: divide into a pc specific output file name.
+  parser.add_argument('-o', dest='output', default='cfg.json', help='output file name')
   args = parser.parse_args()
   run(args)
 
