@@ -75,7 +75,7 @@ def app_handler(args, applist):
 
 def cluster_handler(args, cluster):
   print('Cluster handler')
-  shell_wrapper('''bash -x {BIN_DIR}/cluster.sh {cluster}''')
+  shell_wrapper(f'bash -x {BIN_DIR}/cluster.sh {cluster}')
 
 def envoy_dump(args, pod):
   print(f'Getting Envoy Config Dump, pod = {pod}, output file {args.output}')
