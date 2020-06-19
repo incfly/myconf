@@ -16,10 +16,6 @@ alias btcfg='/google/data/ro/projects/bigtable/contrib/btcfg/btcfg'
 alias fileutil_sm='/google/data/ro/projects/video/storage/util/fileutil --sm_access_service=blade:video-pipeline-youtube-sm-access-prod' 
 alias lifeguard='/google/data/ro/projects/apphosting/tools/lifeguard.par'
 
-function g4d(){
-cd /google/src/cloud/jianfeih/$1/google3
-}
-
 alias pyformat="pyformat --yapf"
 alias gcl='/usr/bin/gcl'
 
@@ -50,3 +46,4 @@ export GO111MODULE=on
 export PATH=$PATH:$(go env GOPATH)/bin:$HOME/.bazel/bin
 source ~/workspace/bitbucket/myconf/misc_scripts/z/z.sh
 }
+
