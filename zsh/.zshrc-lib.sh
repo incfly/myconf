@@ -79,4 +79,3 @@ alias python=python3
 alias watch='watch '
 alias wt='watch '
 alias ta='tmux attach'
-alias ki="${HOME}/workspace/go/src/incfly/sysamples/istio/bin/ki.py"
