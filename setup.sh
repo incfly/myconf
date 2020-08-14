@@ -24,30 +24,6 @@ function kubectl_setup() {
   # wget https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases -L ~/.kubectl_aliases
 }
 
-cppsetup() {
-  sudo apt-get install pkg-config zip g++ zlib1g-dev unzip python -y
-  # from envoy
-	sudo apt-get install \
-		 libtool \
-		 cmake \
-		 automake \
-		 autoconf \
-		 make \
-		 ninja-build \
-		 curl \
-		 unzip \
-		 virtualenv -y
-  mkdir $HOME/workspace/tmp
-  wget https://github.com/bazelbuild/bazel/releases/download/0.26.0/bazel-0.26.0-installer-linux-x86_64.sh \
-    -P $HOME/workspace/tmp
-}
-
-envoysetup() {
-  wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key |sudo apt-key add -
-  sudo apt-add-repository "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-8 main"
-  sudo apt-get update && sudo apt-get install clang-format-8
-}
-
 rustsetup() {
   bash rust/setup.sh
 }
