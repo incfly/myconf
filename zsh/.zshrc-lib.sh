@@ -79,4 +79,4 @@ alias python=python3
 alias watch='watch '
 alias wt='watch '
 alias ta='tmux attach'
-alias ki="${HOME}/workspace/go/src/incfly/sysamples/istio/bin/ki.py"
+export PROMPT='%{$fg[green]%}%m %{$fg_bold[red]%}➜%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
