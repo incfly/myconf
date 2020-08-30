@@ -8,7 +8,7 @@ export PATH=$PATH:$HOME/workspace/bin/clang+llvm-10.0.0/bin:$HOME/workspace/bin
 # - change to python; read the sysamples/istio/.devrc;
 # - and use the file first env var override.
 devc() {
-  cc=${CASE:-"default"}
+  cc=${CASE:-"istiodev"}
   echo "$HOME/workspace/github.com/incfly/sysamples/istio/cases/$cc"
 }
 
