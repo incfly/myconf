@@ -74,9 +74,19 @@ done
 # Add Rust to PATH
 [ -f ~/.cargo/env ] && source ~/.cargo/env
 
-
+alias helm3='helm'
 alias python=python3
 alias watch='watch '
 alias wt='watch '
 alias ta='tmux attach'
 export PROMPT='%{$fg[green]%}%m %{$fg_bold[red]%}➜%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+
+# =======================================
+# 
+# GCP Kubernetes Istio development
+#
+# =======================================
+alias gkeg='gcloud container clusters get-credentials '
+alias gkels='gcloud container clusters list '
+alias gkerm='gcloud container clusters delete -q '
+

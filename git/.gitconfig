@@ -41,3 +41,8 @@
 [core]
   editor = vim
 
+[url "sso://gke-internal/"]
+  insteadOf = https://gke-internal.git.corp.google.com
+
+[url "https://github.com/istio-privater/api"]
+  insteadOf = https://istio.io/api
